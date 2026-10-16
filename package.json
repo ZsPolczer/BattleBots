@@ -1,0 +1,24 @@
+{
+  "name": "battlebot",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Evolving 2D battle bots with a deterministic sim, neuroevolution, and a stream-ready viewer.",
+  "bin": {
+    "battlebot": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "train": "npm run build && node dist/cli.js train",
+    "serve": "npm run build && node dist/cli.js serve",
+    "show": "npm run build && node dist/cli.js show",
+    "test": "npm run build && node dist/test/determinism.js"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

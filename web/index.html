@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>BattleBot — live evolution</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div id="stage">
+      <canvas id="game"></canvas>
+
+      <div class="hud">
+        <div class="row">
+          <div class="panel">
+            <div class="genline">
+              <span class="gen-label">Generation</span>
+              <span class="gen-value" id="gen">0</span>
+            </div>
+            <div class="subline">
+              round <b id="round">1</b> &nbsp;·&nbsp; defence <b id="defenses">0</b>
+              &nbsp;·&nbsp; series <b id="score">0–0</b>
+            </div>
+          </div>
+
+          <div id="killfeed"></div>
+        </div>
+
+        <div class="row" style="align-items: flex-end">
+          <div class="card challenger" id="challengerCard" style="order: 1">
+            <div class="top">
+              <span class="name" id="challengerName">—</span>
+              <span class="elo" id="challengerElo">1200</span>
+            </div>
+            <div class="bar"><i id="challengerHp" style="width: 100%"></i></div>
+            <div class="tag">challenger · gen <span id="challengerGen">0</span></div>
+          </div>
+
+          <div class="card champion" id="championCard" style="order: 0">
+            <div class="top">
+              <span class="name" id="championName">—</span>
+              <span class="elo" id="championElo">1200</span>
+            </div>
+            <div class="bar"><i id="championHp" style="width: 100%"></i></div>
+            <div class="tag">
+              <span class="live"><span class="dot"></span>champion</span> · gen
+              <span id="championGen">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="stats">
+        <div>sim <b id="tps">0</b> ticks/s</div>
+        <div>render <b id="fps">0</b> fps</div>
+        <div>safe zone <b id="zoneR">0</b>px</div>
+      </div>
+
+      <div id="banner"></div>
+
+      <div id="status">
+        connecting to the arena…
+        <br />
+        <span style="font-size: 0.7em">
+          start training with <code>npm run show</code> if nothing appears
+        </span>
+      </div>
+    </div>
+
+    <script type="module" src="/viewer.js"></script>
+  </body>
+</html>
